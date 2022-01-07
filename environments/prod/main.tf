@@ -1,5 +1,5 @@
 module "main" {
-  source      = "../../"
+  source      = "../../terraform/"
   environment = "prod"
   namePrefix  = "project1"
   location    = "westeurope"

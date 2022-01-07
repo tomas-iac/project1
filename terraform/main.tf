@@ -20,7 +20,7 @@ resource "azurerm_subnet" "test" {
 
 // AKS
 module "aks" {
-  source = "github.com/tomas-iac/tm-aks?ref=0.0.3"
+  source = "github.com/tomas-iac/tm-aks/terraform?ref=0.0.4"
   location = azurerm_resource_group.test.location
   resourceGroupName = azurerm_resource_group.test.name
   subnetId = azurerm_subnet.test.id
