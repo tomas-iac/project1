@@ -10,3 +10,11 @@ variable "environment" {
   type = string
 }
 
+variable "vnetName" {
+  type = string
+}
+
+variable "vnetResourceGroup" {
+  type = string
+}
+
