@@ -35,7 +35,7 @@ resource "azurerm_subnet_route_table_association" "aks" {
 
 // AKS
 module "aks" {
-  source            = "github.com/tomas-iac/tm-aks//terraform/?ref=0.0.4"
+  source            = "github.com/tomas-iac/tm-aks//terraform/?ref=0.0.5"
   name              = "${var.namePrefix}-${var.environment}"
   location          = azurerm_resource_group.project1.location
   resourceGroupName = azurerm_resource_group.project1.name
