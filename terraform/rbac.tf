@@ -22,4 +22,10 @@ resource "azurerm_role_assignment" "aks-network" {
   principal_id         = azurerm_user_assigned_identity.aks.principal_id
 }
 
+resource "azurerm_role_assignment" "aks-dnszone" {
+  scope                = var.privateDnsZoneIdAks
+  role_definition_name = "Contributor"
+  principal_id         = azurerm_user_assigned_identity.aks.principal_id
+}
+
 
