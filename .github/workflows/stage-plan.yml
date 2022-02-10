@@ -27,7 +27,7 @@ jobs:
         run: |
           cd environments/stage
           terraform init
-          terraform plan -out=tfplan  
+          terraform plan -out=../../tfplan  
 
       - name: Store plan as artefact
         uses: actions/upload-artifact@v2
