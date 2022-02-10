@@ -3,6 +3,7 @@ name: SyntaxValidation
 on:
   pull_request:
     branches: [ main ]
+    paths: [ terraform/** ]
   workflow_dispatch:
     
 jobs:
