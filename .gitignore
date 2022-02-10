@@ -15,3 +15,6 @@ crash.log
 #
 *.tfvars
 .terraform.lock.hcl
+
+tests/go.mod
+tests/go.sum
