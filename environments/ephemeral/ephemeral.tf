@@ -1,6 +1,6 @@
 
 resource "azurerm_resource_group" "test" {
-  name     = "project1-integration-ephemeral-rg"
+  name     = "project1-ephemeral-base-rg"
   location = "westeurope"
 }
 

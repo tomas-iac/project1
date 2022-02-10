@@ -1,6 +1,6 @@
 module "main" {
   source                  = "../../terraform/"
-  environment             = "integration"
+  environment             = "ephemeral"
   namePrefix              = "project1"
   location                = "westeurope"
   vnetName                = azurerm_virtual_network.test.name
