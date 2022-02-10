@@ -1,5 +1,5 @@
 module "main" {
-  source               = "../../terraform/"
+  source               = "github.com/tomas-iac/project1//terraform?ref=0.0.1"
   environment          = "prod"
   namePrefix           = "project1"
   location             = "westeurope"
