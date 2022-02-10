@@ -31,4 +31,4 @@ jobs:
           cd tests
           go mod init project1
           go get github.com/gruntwork-io/terratest/modules/terraform
-          go test -timeout 60m
+          go test -timeout 120m
