@@ -26,4 +26,5 @@ jobs:
       - name: Capture Terraform plan of changes
         run: |
           cd environments/stage
+          terraform init
           terraform plan -out=tfplan  
