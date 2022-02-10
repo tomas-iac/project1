@@ -29,6 +29,6 @@ jobs:
       - name: Unit testing of module with Terratest
         run: |
           cd tests
-          go mod init aks
+          go mod init project1
           go get github.com/gruntwork-io/terratest/modules/terraform
           go test -timeout 60m
