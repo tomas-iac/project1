@@ -5,8 +5,8 @@ module "main" {
   location                = "westeurope"
   vnetName                = azurerm_virtual_network.test.name
   vnetResourceGroup       = azurerm_resource_group.test.name
-  subnetPrefixAks         = azurerm_subnet.aks.address_prefixes[0]
-  subnetPrefixServices    = azurerm_subnet.services.address_prefixes[0]
+  subnetPrefixAks         = "10.0.0.0/22"
+  subnetPrefixServices    = "10.0.4.0/24"
   privateDnsZoneIdAks     = azurerm_private_dns_zone.sql.id
   privateDnsZoneIdSql     = azurerm_private_dns_zone.aks.id
   logAnalyticsWorkspaceId = azurerm_log_analytics_workspace.test.id
