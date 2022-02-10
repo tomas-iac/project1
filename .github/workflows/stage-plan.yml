@@ -1,4 +1,4 @@
-name: SyntaxValidation
+name: StagePlan
 
 on:
   pull_request:
