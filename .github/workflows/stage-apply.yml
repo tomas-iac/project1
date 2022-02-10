@@ -1,9 +1,6 @@
-name: Prod plan
+name: Stage apply
 
 on:
-  pull_request:
-    branches: [ main ]
-    paths: [ environments/prod/** ]
   workflow_dispatch:
     
 jobs:
@@ -25,6 +22,6 @@ jobs:
         
       - name: Capture Terraform plan of changes
         run: |
-          cd environments/prod
+          cd environments/stage
           terraform init
-          terraform plan -out=tfplan  
+          terraform apply -auto-approve  

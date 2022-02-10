@@ -1,4 +1,4 @@
-name: StagePlan
+name: Stage plan
 
 on:
   pull_request:

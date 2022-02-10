@@ -1,4 +1,4 @@
-name: SyntaxValidation
+name: Syntax validation
 
 on:
   pull_request:
