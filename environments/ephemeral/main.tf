@@ -11,6 +11,7 @@ module "main" {
   privateDnsZoneIdSql     = azurerm_private_dns_zone.sql.id
   logAnalyticsWorkspaceId = azurerm_log_analytics_workspace.test.id
   dbSku                   = "GP_Gen5_2"
+  outboundType            = "loadBalancer"
 
   depends_on = [
     azurerm_virtual_network.test,
