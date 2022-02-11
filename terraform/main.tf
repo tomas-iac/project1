@@ -80,7 +80,7 @@ module "sql" {
   privateDnsZoneId        = var.privateDnsZoneIdSql
   adminUsername           = "tomas"
   adminPassword           = "Azure12345678"
-  sku                     = "GP_Gen5_2"
+  sku                     = var.dbSku
   logAnalyticsWorkspaceId = var.logAnalyticsWorkspaceId
   enableMonitoring        = true
 }

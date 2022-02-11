@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  test:
+  plan:
     runs-on: ubuntu-latest
     environment: production
     env:

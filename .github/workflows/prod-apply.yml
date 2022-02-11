@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  test:
+  apply:
     runs-on: ubuntu-latest
     environment: production
     env:
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         
-      - name: Capture Terraform plan of changes
+      - name: Terraform apply
         run: |
           cd environments/prod
           terraform init

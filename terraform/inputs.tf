@@ -41,3 +41,7 @@ variable "subnetPrefixServices" {
   type = string
 }
 
+variable "sbSku" {
+  type = string
+}
+
