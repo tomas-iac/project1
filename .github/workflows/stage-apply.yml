@@ -1,6 +1,11 @@
+# Always apply main to staging environment
+
 name: Stage apply
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     
 jobs:

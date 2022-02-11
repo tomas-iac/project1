@@ -1,3 +1,5 @@
+# On PR to main test project on ephemeral infrastructure first
+
 name: Terratest
 
 on:

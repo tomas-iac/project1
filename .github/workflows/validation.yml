@@ -1,3 +1,5 @@
+# On PR validate syntax
+
 name: Syntax validation
 
 on:

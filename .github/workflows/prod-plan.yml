@@ -1,3 +1,5 @@
+# On PR changes to production environment folder run terraform plan to capture required changes in production
+
 name: Prod plan
 
 on:

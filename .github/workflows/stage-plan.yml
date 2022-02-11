@@ -1,9 +1,13 @@
+# On PR to main run terraform plan to capture required changes in staging environment and check for errors
+
 name: Stage plan
 
 on:
   pull_request:
     branches: [ main ]
-    paths: [ environments/stage/** ]
+    paths: 
+    - environments/stage/**
+    - terraform/**
   workflow_dispatch:
     
 jobs:

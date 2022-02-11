@@ -1,5 +1,5 @@
 module "main" {
-  source               = "github.com/tomas-iac/project1//terraform?ref=0.0.1"
+  source               = "github.com/tomas-iac/project1//terraform?ref=0.0.1"  # Main is pinned to release tag
   environment          = "prod"
   namePrefix           = "project1"
   location             = "westeurope"

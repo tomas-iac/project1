@@ -1,5 +1,5 @@
 module "main" {
-  source               = "github.com/tomas-iac/project1//terraform?ref=0.0.1"
+  source               = "../../terraform"   # stage is always from main, no pinning or branching
   environment          = "stage"
   namePrefix           = "project1"
   location             = "westeurope"

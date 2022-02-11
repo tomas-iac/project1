@@ -1,3 +1,5 @@
+# Deploy prod on request only
+
 name: Prod apply
 
 on:
