@@ -20,7 +20,7 @@ variable "vnetResourceGroup" {
 
 variable "privateDnsZoneIdAks" {
   type    = string
-  default = "/subscriptions/a0f4a733-4fce-4d49-b8a8-d30541fc1b45/resourceGroups/tom-dns-rg/providers/Microsoft.Network/privateDnsZones/privatelink.westeurope.azmk8s.io"
+  default = "/subscriptions/a0f4a733-4fce-4d49-b8a8-d30541fc1b45/resourceGroups/tom-dns-rg/providers/Microsoft.Network/privateDnsZones/privatelink.northeurope.azmk8s.io"
 }
 
 variable "privateDnsZoneIdSql" {
