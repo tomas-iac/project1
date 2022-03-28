@@ -2,7 +2,7 @@ module "main" {
   source                  = "../../terraform/"
   environment             = "ephemeral"
   namePrefix              = "project1"
-  location                = "northeurope"
+  location                = "eastus2"
   vnetName                = azurerm_virtual_network.test.name
   vnetResourceGroup       = azurerm_resource_group.test.name
   subnetPrefixAks         = "10.0.0.0/22"
