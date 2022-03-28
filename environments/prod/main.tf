@@ -2,7 +2,7 @@ module "main" {
   source               = "github.com/tomas-iac/project1//terraform?ref=0.0.1"  # Main is pinned to release tag
   environment          = "prod"
   namePrefix           = "project1"
-  location             = "westeurope"
+  location             = "northeurope"
   vnetName             = "tom-sub02-vnet"
   vnetResourceGroup    = "tom-sub02-rg"
   subnetPrefixAks      = "10.1.0.0/22"
