@@ -84,3 +84,5 @@ module "sql" {
   logAnalyticsWorkspaceId = var.logAnalyticsWorkspaceId
   enableMonitoring        = true
 }
+
+  // ZMENA
