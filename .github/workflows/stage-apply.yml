@@ -37,7 +37,10 @@ jobs:
           check_artifacts:  false
           search_artifacts: false
 
-      - run: ls
+      - run: |
+              ls
+              pwd
+              echo $GITHUB_WORKFLOW
 
       - name: Terraform apply
         run: |
