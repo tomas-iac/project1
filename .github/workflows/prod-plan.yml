@@ -30,3 +30,9 @@ jobs:
           cd environments/prod
           terraform init
           terraform plan -out=tfplan  
+
+      - name: Store plan as artefact
+        uses: actions/upload-artifact@v2
+        with:
+          name: prod-plan
+          path: tfplan
