@@ -21,9 +21,19 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
+
+      - name: Download plan from artefacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: prod-plan.yml
+          workflow_conclusion: success
+          name: stage-plan
+          path: environments/prod/
+          check_artifacts:  false
+          search_artifacts: false
         
       - name: Terraform apply
         run: |
           cd environments/prod
           terraform init
-          terraform apply -auto-approve  
+          terraform apply -auto-approve  tfplan
