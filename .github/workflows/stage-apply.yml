@@ -37,8 +37,10 @@ jobs:
           check_artifacts:  false
           search_artifacts: false
 
+      - run: ls
+
       - name: Terraform apply
         run: |
           cd environments/stage
           terraform init
-          terraform apply -auto-approve  ./tfplan
+          terraform apply -auto-approve  tfplan
