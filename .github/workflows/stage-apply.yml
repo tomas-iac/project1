@@ -27,14 +27,8 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-        
-      - name: Download plan from artefacts
-        uses: actions/download-artifact@v3
-        with:
-          name: stage-plan
-          path: tfplan
 
-      - name: Download artifact
+      - name: Download plan from artefacts
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: stage-plan.yml
