@@ -1,7 +1,7 @@
 
 resource "azurerm_resource_group" "test" {
   name     = "project1-ephemeral-base-rg"
-  location = "westeurope"
+  location = "eastus2"
 }
 
 resource "azurerm_virtual_network" "test" {
@@ -25,7 +25,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "sql" {
 }
 
 resource "azurerm_private_dns_zone" "aks" {
-  name                = "privatelink.westeurope.azmk8s.io"
+  name                = "privatelink.${azurerm_resource_group.test.location}.azmk8s.io"
   resource_group_name = azurerm_resource_group.test.name
 }
 

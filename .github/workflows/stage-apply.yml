@@ -28,8 +28,14 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         
+      - name: Download plan from artefacts
+        uses: actions/download-artifact@v3
+        with:
+          name: stage-plan
+          path: tfplan
+
       - name: Terraform apply
         run: |
           cd environments/stage
           terraform init
-          terraform apply -auto-approve  
+          terraform apply -auto-approve  ./tfplan

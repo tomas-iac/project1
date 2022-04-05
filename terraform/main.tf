@@ -25,6 +25,7 @@ resource "azurerm_subnet" "services" {
 
 // Add UDR (for AKS provisioning to work in vWAN topology)
 resource "azurerm_route_table" "aks" {
+  count                         = var.outboundType == "userDefinedRouting" ? 1 : 0
   name                          = "${var.namePrefix}-${var.environment}-aks-routes"
   location                      = var.location
   resource_group_name           = var.vnetResourceGroup
@@ -39,13 +40,14 @@ resource "azurerm_route_table" "aks" {
 }
 
 resource "azurerm_subnet_route_table_association" "aks" {
+  count          = var.outboundType == "userDefinedRouting" ? 1 : 0
   subnet_id      = azurerm_subnet.aks.id
-  route_table_id = azurerm_route_table.aks.id
+  route_table_id = azurerm_route_table.aks[0].id
 }
 
 // AKS
 module "aks" {
-  source                  = "github.com/tomas-iac/tm-aks//terraform/?ref=0.0.6"
+  source                  = "github.com/tomas-iac/tm-aks//terraform/?ref=0.0.7"
   name                    = "${var.namePrefix}-${var.environment}"
   location                = azurerm_resource_group.project1.location
   resourceGroupName       = azurerm_resource_group.project1.name
@@ -55,7 +57,7 @@ module "aks" {
   identityId              = azurerm_user_assigned_identity.aks.id
   identityClientId        = azurerm_user_assigned_identity.aks.client_id
   identityObjectId        = azurerm_user_assigned_identity.aks.principal_id
-  outboundType            = "userDefinedRouting"
+  outboundType            = var.outboundType
   privateCluster          = true
   privateDnsZoneId        = var.privateDnsZoneIdAks
   enableMonitoring        = true
@@ -66,12 +68,13 @@ module "aks" {
     azurerm_role_assignment.aks-network,
     azurerm_role_assignment.aks-project1,
     azurerm_subnet_route_table_association.aks,
+    azurerm_subnet.aks
   ]
 }
 
 // SQL
 module "sql" {
-  source                  = "github.com/tomas-iac/tm-azuresql//terraform/?ref=0.0.2"
+  source                  = "github.com/tomas-iac/tm-azuresql//terraform/?ref=0.0.4"
   serverName              = "${var.namePrefix}-${var.environment}-tomsqlsrv"
   dbName                  = "mydb"
   resourceGroupName       = azurerm_resource_group.project1.name

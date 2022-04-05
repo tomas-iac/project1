@@ -18,3 +18,4 @@ crash.log
 
 tests/go.mod
 tests/go.sum
+environments/stage/.terraform.lock.hcl
