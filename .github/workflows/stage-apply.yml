@@ -34,16 +34,12 @@ jobs:
           workflow: stage-plan.yml
           workflow_conclusion: success
           name: stage-plan
+          path: environments/stage/
           check_artifacts:  false
           search_artifacts: false
-
-      - run: |
-              ls
-              pwd
-              echo $GITHUB_WORKFLOW
 
       - name: Terraform apply
         run: |
           cd environments/stage
           terraform init
-          terraform apply -auto-approve  ./tfplan
+          terraform apply -auto-approve  tfplan
