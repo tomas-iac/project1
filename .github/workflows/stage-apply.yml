@@ -43,4 +43,4 @@ jobs:
         run: |
           cd environments/stage
           terraform init
-          terraform apply -auto-approve  tfplan
+          terraform apply -auto-approve  ./tfplan
