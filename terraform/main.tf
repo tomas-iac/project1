@@ -52,7 +52,7 @@ module "aks" {
   location                = azurerm_resource_group.project1.location
   resourceGroupName       = azurerm_resource_group.project1.name
   subnetId                = azurerm_subnet.aks.id
-  vmSize                  = "Standard_B2s"
+  vmSize                  = "Standard_B2ms"
   nodeCount               = 1
   identityId              = azurerm_user_assigned_identity.aks.id
   identityClientId        = azurerm_user_assigned_identity.aks.client_id
