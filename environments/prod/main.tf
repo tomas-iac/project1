@@ -9,4 +9,6 @@ module "main" {
   subnetPrefixAks      = "10.1.0.0/22"
   subnetPrefixServices = "10.1.4.0/24"
   dbSku                = "GP_Gen5_2"
+  kubernetesVmSize     = "Standard_B4ms"
+  kubernetesNodeCount  = 1
 }
