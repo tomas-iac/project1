@@ -5,12 +5,5 @@ It is designed as module nesting other modules with services such as AKS or Azur
 
 Folder environments contains root for production and staging in order to isolate state files and allow for different provider configurations (to target different subscriptions or even tenants).
 
-## Deploy
+See full context at [https://github.com/tomas-iac/docs](https://github.com/tomas-iac/docs)
 
-```bash
-cd environments/staging   # Deploy staging environment
-terraform init
-terraform validate
-terraform plan
-terraform apply
-```
