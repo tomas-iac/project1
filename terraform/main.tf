@@ -47,13 +47,13 @@ resource "azurerm_subnet_route_table_association" "aks" {
 
 // AKS
 module "aks" {
-  source                  = "github.com/tomas-iac/tm-aks//terraform/?ref=0.0.7"
+  source                  = "github.com/tomas-iac/tm-aks//terraform/?ref=0.0.8"
   name                    = "${var.namePrefix}-${var.environment}"
   location                = azurerm_resource_group.project1.location
   resourceGroupName       = azurerm_resource_group.project1.name
   subnetId                = azurerm_subnet.aks.id
-  vmSize                  = "Standard_B2ms"
-  nodeCount               = 1
+  vmSize                  = var.kubernetesVmSize
+  nodeCount               = var.kubernetesNodeCount
   identityId              = azurerm_user_assigned_identity.aks.id
   identityClientId        = azurerm_user_assigned_identity.aks.client_id
   identityObjectId        = azurerm_user_assigned_identity.aks.principal_id

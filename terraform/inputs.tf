@@ -50,3 +50,13 @@ variable "outboundType" {
   default = "userDefinedRouting"
 }
 
+variable "kubernetesVmSize" {
+  type = string
+  default = "Standard_B2ms"
+}
+
+variable "kubernetesNodeCount" {
+  type = string
+  default = 1
+}
+
